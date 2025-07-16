@@ -1,0 +1,62 @@
+{
+	"name": "directus-extension-localized-system-emails",
+	"description": "A Directus extensions that enables translating system emails via liquid.js template files and also the subject via the directus_translations table",
+	"icon": "extension",
+	"version": "1.0.0",
+	"author": {
+		"email": "jogchum@clevercactus.dev",
+		"name": "Jogchum Koerts"
+	},
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/joggienl/directus-extension-localized-system-emails.git"
+	},
+	"keywords": [
+		"directus",
+		"directus-extension",
+		"directus-extension-hook"
+	],
+	"type": "module",
+	"files": [
+		"dist"
+	],
+	"publishConfig": {
+		"access": "public"
+	},
+	"directus:extension": {
+		"type": "hook",
+		"path": "dist/index.js",
+		"source": "src/index.ts",
+		"host": ">=10.10.0 <=12.0.0"
+	},
+	"scripts": {
+		"build": "directus-extension build",
+		"dev": "directus-extension build -w --no-minify",
+		"link": "directus-extension link",
+		"validate": "directus-extension validate",
+		"biome:check": "pnpm exec biome check",
+		"biome:check:write": "pnpm exec biome check --write",
+		"biome:format": "pnpm exec biome format",
+		"biome:format:write": "pnpm exec biome format --write",
+		"biome:lint": "pnpm exec biome lint",
+		"biome:lint:write": "pnpm exec biome lint --write"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.1.1",
+		"@directus/extensions-sdk": "14.0.0",
+		"@types/fs-extra": "11.0.4",
+		"@types/node": "24.0.14",
+		"fs-extra": "11.3.0",
+		"lefthook": "1.12.2",
+		"typescript": "5.8.3"
+	},
+	"packageManager": "pnpm@10.13.1+sha512.37ebf1a5c7a30d5fabe0c5df44ee8da4c965ca0c5af3dbab28c3a1681b70a256218d05c81c9c0dcf767ef6b8551eb5b960042b9ed4300c59242336377e01cfad",
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"esbuild",
+			"lefthook",
+			"vue-demi"
+		]
+	}
+}
